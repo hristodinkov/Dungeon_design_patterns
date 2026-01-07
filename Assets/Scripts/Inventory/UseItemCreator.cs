@@ -6,7 +6,7 @@ public class UseItemCreator
         {
             ItemUseType.Consume => new ConsumeItem(),
             ItemUseType.Equip => new EquipItem(),
-            _ => null
+            _ => null,
         };
     }
 }

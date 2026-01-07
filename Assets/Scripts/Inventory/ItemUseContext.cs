@@ -1,5 +1,6 @@
 using InventorySystem;
 
+[System.Serializable]
 public class ItemUseContext 
 {
     public Inventory Inventory;

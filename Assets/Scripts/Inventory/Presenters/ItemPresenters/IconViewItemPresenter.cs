@@ -61,9 +61,10 @@ namespace InventorySystem
         public void Setup(Item item, ItemUseContext ctx)
         {
             this.item = item;     
-            this.context = ctx;    
-                                    
+            this.context = ctx;                               
         }
+
+
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Right)
@@ -75,10 +76,6 @@ namespace InventorySystem
                 }
             }
         }
-        //private void TryUseItem()
-        //{
-        //    UseItemCreator.TryUse(item);
-        //}
     }
 
 

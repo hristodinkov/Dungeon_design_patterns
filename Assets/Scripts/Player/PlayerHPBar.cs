@@ -40,4 +40,9 @@ public class PlayerHPBar : PlayerObserver
         currentHP = playerData.currentHP;
         UpdateHPBar();
     }
+
+    protected override void OnHeal(int healAmount)
+    {
+        Heal(healAmount);
+    }
 }

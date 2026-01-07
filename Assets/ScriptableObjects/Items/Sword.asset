@@ -17,7 +17,8 @@ MonoBehaviour:
   attack: 3
   defense: 0
   isStackable: 0
-  isConsumable: 0
   healAmount: 0
+  quantity: 1
+  useType: 2
   itemIcon: {fileID: -2061804530, guid: 7ca399ccdaafe2c41971027b08416984, type: 3}
   itemModel: {fileID: 1060706483339841207, guid: 66a8cd730eaaa4d2190f4a07140fef86, type: 3}

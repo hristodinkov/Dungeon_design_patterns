@@ -7,6 +7,7 @@ public class SetUpInventoryContext : MonoBehaviour
     [SerializeField] private PlayerHPBar playerHealth;
 
     private ItemUseContext context;
+    public ItemUseContext Context => context;
 
     private void Awake()
     {

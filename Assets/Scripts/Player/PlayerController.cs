@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerData playerData;
 
     public event Action<DamageData,PlayerData> onHit;
+    public event Action<int> onHeal;
 
     private void Start()
     {
@@ -21,6 +22,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(EnableAttackCollider());
         }
+    }
+
+    public void Heal(int amount) 
+    { 
+        onHeal?.Invoke(amount); 
     }
 
     private System.Collections.IEnumerator EnableAttackCollider()
@@ -40,4 +46,6 @@ public class PlayerController : MonoBehaviour
         } 
         onHit?.Invoke(damageData,playerData);
     }
+
+
 }

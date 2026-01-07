@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace InventorySystem
 {
@@ -24,13 +25,14 @@ namespace InventorySystem
         [SerializeField]
         private int strategyIndex = 0;
 
+        // Event triggered when the inventory changes.
+        public static Action OnInventoryChanged;
+
         private void Awake()
         {
             GenerateInventory();             // Create items based on itemDatas.
             LoadItemSortingStrategies();     // Find sorting strategies attached as components.
         }
-
-     
 
         // Instantiates items based on the item data list.
         private void GenerateInventory()
@@ -57,12 +59,14 @@ namespace InventorySystem
             }
 
             items.Add(newItem);
+            OnInventoryChanged?.Invoke();
         }
 
         // Removes an item from the inventory.
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+            OnInventoryChanged?.Invoke();
         }
 
    

@@ -1,4 +1,5 @@
 using IneventorySystem;
+using InventorySystem;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -16,9 +17,20 @@ public class IconViewInventoryPresenter : InventoryPresenter
     [SerializeField]
     private bool belongsToPlayer = true;
 
+    [SerializeField] private SetUpInventoryContext contextProvider; 
+
+    [SerializeField] private ItemUseContext context; 
+
+    private void Start()
+    {
+        context = contextProvider.Context;
+        Inventory.OnInventoryChanged += PresentInventory;
+        PresentInventory();
+    }
+
     private void OnEnable()
     {
-        PresentInventory();
+        Inventory.OnInventoryChanged += PresentInventory;
     }
     public override void PresentInventory()
     {
@@ -63,16 +75,20 @@ public class IconViewInventoryPresenter : InventoryPresenter
 
         for (int i = 0; i < listWithItemsStacked.Count; i++)
         {
-            ItemPresenter itemPresenter = Instantiate<ItemPresenter>(itemPresenterPrefab);
-            TextMeshProUGUI textQuantity = itemPresenter.GetComponentInChildren<TextMeshProUGUI>();
-
-            itemPresenter.PresentItem(listWithItemsStacked[i]);
-
-            // Set the parent and scale for proper UI layout.
+            ItemPresenter itemPresenter = Instantiate(itemPresenterPrefab);
+            itemPresenter.transform.SetParent(listParent);
             itemPresenter.transform.SetParent(listParent);
             itemPresenter.transform.localScale = Vector3.one;
+            TextMeshProUGUI textQuantity = itemPresenter.GetComponentInChildren<TextMeshProUGUI>();
+
+            
+            var iconPresenter = itemPresenter as IconViewItemPresenter;
+            if (iconPresenter != null) 
+            { 
+                iconPresenter.Setup(listWithItemsStacked[i], context); 
+            }
+            itemPresenter.PresentItem(listWithItemsStacked[i]);
         }
-        // Update the sorting strategy text if the UI element is assigned.
         if (sortingStrategyNameText != null)
             sortingStrategyNameText.text = inventory.GetCurrentStrategyName();
     }
