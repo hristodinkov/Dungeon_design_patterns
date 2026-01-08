@@ -19,6 +19,7 @@ public class Item
     [SerializeField]
     private int attack;
     public int Attack => attack;
+
     [SerializeField]
     private int defense;
 
@@ -38,6 +39,11 @@ public class Item
 
     private ItemUseType useType;
     public ItemUseType UseType => useType;
+
+    [SerializeField]
+    private DamageData damageData;
+
+    public DamageData DamageData => damageData;
 
     [Header("Visuals")]
     public Sprite itemIcon;
@@ -67,5 +73,9 @@ public class Item
         itemIcon = itemData.itemIcon;
         itemModel = itemData.itemModel;
         useType = itemData.useType;
+        if (itemData.attack > 0)
+        {
+            damageData = new DamageData(itemData.attack);
+        }
     }
 }

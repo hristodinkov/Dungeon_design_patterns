@@ -20,4 +20,7 @@ public abstract class EnemyObserver : MonoBehaviour
     protected abstract void OnEnemyCreated(Enemy enemy);
 
     protected abstract void OnEnemyHit(Enemy enemy, DamageData damageData);
+
+    protected abstract void OnEnemyDie(Enemy enemy);
+
 }

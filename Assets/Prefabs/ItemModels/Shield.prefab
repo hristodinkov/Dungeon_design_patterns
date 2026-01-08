@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: thickness.x
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6517441086711946425, guid: 793e8ba70640c4ab8a0be7eca4c2054b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7561517411101823851, guid: 793e8ba70640c4ab8a0be7eca4c2054b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -108,7 +112,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8473302070036665173, guid: 793e8ba70640c4ab8a0be7eca4c2054b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473302070036665173, guid: 793e8ba70640c4ab8a0be7eca4c2054b, type: 3}
+      propertyPath: onMouseClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 383588907476853314, guid: 793e8ba70640c4ab8a0be7eca4c2054b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

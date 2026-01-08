@@ -2,17 +2,7 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private PlayerCombat playerCombat;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,9 +11,14 @@ public class SwordAttack : MonoBehaviour
             EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
             if (enemyController != null)
             {
-                DamageData damageData = new DamageData(5);
-
-                enemyController.GetHit(damageData);
+                if(playerCombat.CurrentDamage != null)
+                {
+                    enemyController.GetHit(playerCombat.CurrentDamage);
+                }
+                else
+                {
+                    enemyController.GetHit(new DamageData(5));
+                }
             }
         }
     }

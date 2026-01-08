@@ -46,8 +46,11 @@ namespace InventorySystem
             }
             else if(item.HealAmount>0) 
             {
-             
                 ItemInfoDisplayer.itemInfo = "Heal: " + item.HealAmount; 
+            }
+            else 
+            {
+                ItemInfoDisplayer.itemInfo = "Quantity: "+ item.Quantity;
             }
 
             ItemInfoDisplayer.itemName = item.ItemName.ToString();

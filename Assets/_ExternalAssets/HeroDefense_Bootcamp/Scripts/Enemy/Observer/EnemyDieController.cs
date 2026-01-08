@@ -20,6 +20,11 @@ public class EnemyDieController : EnemyObserver
         // No implementation needed for now
     }
 
+    protected override void OnEnemyDie(Enemy enemy)
+    {
+        // No implementation needed for now
+    }
+
     protected override void OnEnemyHit(Enemy enemy, DamageData damageData)
     {
         if (!died)
@@ -36,6 +41,8 @@ public class EnemyDieController : EnemyObserver
                 {
                     collider.enabled = false;
                 }
+
+
 
                 Destroy(enemyController.gameObject, disappearDelay);
             }

@@ -14,9 +14,10 @@ public class ConsumeItem : UseItem
     public override void Execute(Item item, ItemUseContext context)
     {
         context.PlayerHealth.Heal(item.HealAmount); 
-        item.Remove(1); 
-
+        item.Remove(1);
+        
         if (item.Quantity == 0) 
             context.Inventory.RemoveItem(item);
+        Inventory.OnInventoryChanged?.Invoke();
     }
 }

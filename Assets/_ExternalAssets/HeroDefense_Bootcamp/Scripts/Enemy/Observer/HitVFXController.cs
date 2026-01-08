@@ -62,4 +62,9 @@ public class HitVFXController : EnemyObserver
             }
         }
     }
+
+    protected override void OnEnemyDie(Enemy enemy)
+    {
+        // No implementation needed for now
+    }
 }

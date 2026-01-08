@@ -19,6 +19,11 @@ public class EnemyHPBar : EnemyObserver
         currentHP = maxHP;
     }
 
+    protected override void OnEnemyDie(Enemy enemy)
+    {
+        // No implementation needed for now
+    }
+
     protected override void OnEnemyHit(Enemy enemy, DamageData damageData)
     {
         currentHP -= damageData.damage;

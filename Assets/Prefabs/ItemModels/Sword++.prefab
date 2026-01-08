@@ -56,11 +56,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6236024577089624031, guid: 53eeabd7e504449848ae16d20c3a6e32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6275693372782064011, guid: 53eeabd7e504449848ae16d20c3a6e32, type: 3}
       propertyPath: m_Name
       value: Sword++
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8750320515364034611, guid: 53eeabd7e504449848ae16d20c3a6e32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2760477953940154056, guid: 53eeabd7e504449848ae16d20c3a6e32, type: 3}
+    - {fileID: 6236024577089624031, guid: 53eeabd7e504449848ae16d20c3a6e32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

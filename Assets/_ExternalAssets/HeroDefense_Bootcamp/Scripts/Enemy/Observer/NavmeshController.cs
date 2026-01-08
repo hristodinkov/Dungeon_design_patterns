@@ -21,26 +21,20 @@ public class NavmeshController : EnemyObserver
         navMeshAgent.speed = enemy.Speed;
     }
 
+    protected override void OnEnemyDie(Enemy enemy)
+    {
+        navMeshAgent.speed = 0;
+    }
+
     protected override void OnEnemyHit(Enemy enemy, DamageData damageData)
     {
-        //todo
-        if (enemy.currentHP ==0)
+        float counter = 0;
+        while (counter < damageData.slowDownTime)
         {
-            
-            navMeshAgent.speed = 0;
+            navMeshAgent.speed = damageData.slowDown;
+            counter += Time.deltaTime;
         }
-        else
-        {
-            float counter = 0;
-            while (counter < damageData.slowDownTime)
-            {
-                navMeshAgent.speed = damageData.slowDown;
-                counter += Time.deltaTime;
-            }
-            navMeshAgent.speed = enemy.Speed;
-        }
-        
-        
+        navMeshAgent.speed = enemy.Speed;
     }
 
     private void Awake()

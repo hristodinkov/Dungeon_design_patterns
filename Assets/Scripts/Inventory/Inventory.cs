@@ -54,6 +54,7 @@ namespace InventorySystem
                 if (stack != null)
                 {
                     stack.Add(1);
+                    OnInventoryChanged?.Invoke();
                     return;
                 }
             }

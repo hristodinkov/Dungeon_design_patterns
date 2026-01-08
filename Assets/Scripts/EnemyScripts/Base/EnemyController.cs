@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 { 
@@ -8,8 +9,11 @@ public class EnemyController : MonoBehaviour
     private EnemyData enemyData;
     private Enemy enemy;
 
+    [SerializeField] private List<GameObject> deadLootPrefabs;
+
     public event Action<Enemy> onEnemyCreated;
     public event Action<Enemy, DamageData> onHit;
+    public event Action<Enemy> onDie;
 
     void Start()
     {
@@ -17,20 +21,28 @@ public class EnemyController : MonoBehaviour
         onEnemyCreated?.Invoke(enemy);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void GetHit(DamageData damageData)
     {
         enemy.currentHP -= damageData.damage;
-        if(enemy.currentHP < 0)
+        if (enemy.currentHP < 0)
         {
             enemy.currentHP = 0;
+            onDie?.Invoke(enemy);
+            SpawnDeadLoot();
         }
 
         onHit?.Invoke(enemy, damageData);
+    }
+
+    private void SpawnDeadLoot()
+    {
+        int r = UnityEngine.Random.Range(0, deadLootPrefabs.Count);
+        GameObject deadLoot =
+            Instantiate(
+                deadLootPrefabs[r],
+                new Vector3(transform.position.x, transform.position.y + 0.45f, transform.position.z),
+                Quaternion.identity
+            );
     }
 
     public void GetHitButton()
@@ -40,6 +52,7 @@ public class EnemyController : MonoBehaviour
         if (enemy.currentHP < 0)
         {
             enemy.currentHP = 0;
+
         }
 
         onHit?.Invoke(enemy, damageData);
@@ -50,7 +63,3 @@ public class EnemyController : MonoBehaviour
         return enemy.currentHP <= 0;
     }
 }
-
-
-
-

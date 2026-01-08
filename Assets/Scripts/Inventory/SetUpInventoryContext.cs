@@ -5,16 +5,16 @@ public class SetUpInventoryContext : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
     [SerializeField] private PlayerHPBar playerHealth;
-
-    private ItemUseContext context;
-    public ItemUseContext Context => context;
+    [SerializeField] private PlayerCombat playerCombat;
+    public ItemUseContext Context { get; private set; }
 
     private void Awake()
     {
-        context = new ItemUseContext
+        Context = new ItemUseContext
         {
             Inventory = inventory,
-            PlayerHealth = playerHealth
+            PlayerHealth = playerHealth,
+            PlayerCombat = playerCombat
         };
     }
 }
