@@ -15,4 +15,5 @@ MonoBehaviour:
   maxHP: 20
   speed: 4
   money: 2
-  xp: 15
+  xp: 30
+  attckDamage: 0

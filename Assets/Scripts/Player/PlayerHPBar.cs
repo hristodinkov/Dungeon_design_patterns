@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class PlayerHPBar : PlayerObserver
 {
+    //[SerializeField]
+    //private Image hpBarImage;
     [SerializeField]
-    private Image hpBarImage;
+    private Slider hpBarSlider;
     [SerializeField]
     private PlayerData playerData;
     [SerializeField]
@@ -13,7 +15,11 @@ public class PlayerHPBar : PlayerObserver
 
     private float maxHP;
     private float currentHP;
-    
+
+    public float MaxHP => maxHP;
+    public float CurrentHP => currentHP;
+
+
     private void Start()
     {
         maxHP = playerData.maxHP;
@@ -27,7 +33,8 @@ public class PlayerHPBar : PlayerObserver
     }
     private void UpdateHPBar()
     {
-        hpBarImage.fillAmount = currentHP / maxHP;
+        //hpBarImage.fillAmount = currentHP / maxHP;
+        hpBarSlider.value = currentHP / maxHP;
         hpText.text = $"{currentHP} / {maxHP}";
     }
     public void Heal(int healAmount)
@@ -45,4 +52,21 @@ public class PlayerHPBar : PlayerObserver
     {
         Heal(healAmount);
     }
+
+    public void SetMaxHealth(int hPToAdd)
+    {
+        playerData.maxHP += hPToAdd;
+        maxHP += hPToAdd;
+        hpBarSlider.maxValue = 1f;
+        HealToMaxHealth();
+        UpdateHPBar();
+    }
+
+    protected void HealToMaxHealth()
+    {
+        playerData.currentHP = playerData.maxHP;
+        currentHP = playerData.currentHP;
+    }
+
+
 }

@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: DefaultPlayerData
   m_EditorClassIdentifier: 
   maxHP: 100
-  speed: 3
+  speed: 5
   money: 0
   xp: 0
   attckDamage: 5
-  level: 0
-  currentHP: 100
+  level: 1
+  currentHP: 40
+  initialLevel: 1
+  initialXP: 0
+  initialMaxHP: 100
+  initialCurrentHP: 100
+  initialSpeed: 5
+  initialMoney: 0
+  initialAttackDamage: 5

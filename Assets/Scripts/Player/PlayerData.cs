@@ -10,7 +10,26 @@ public class PlayerData : ScriptableObject
     public int attckDamage;
     public int level;
     public int currentHP;
-  
+
+    [Header("Initial Values")] 
+    public int initialLevel = 1; 
+    public int initialXP = 0; 
+    public int initialMaxHP = 100; 
+    public int initialCurrentHP = 100;
+    public float initialSpeed = 5f;
+    public int initialMoney = 0;
+    public int initialAttackDamage = 5;
+    public void ResetToInitial() 
+    { 
+        level = initialLevel;
+        xp = initialXP; 
+        maxHP = initialMaxHP; 
+        currentHP = initialCurrentHP; 
+        speed = initialSpeed;
+        money = initialMoney;
+        attckDamage = initialAttackDamage;
+    }
+
     //public enum PlayerClass
     //{
     //    Warrior,

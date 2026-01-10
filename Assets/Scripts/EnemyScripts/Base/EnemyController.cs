@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public event Action<Enemy, DamageData> onHit;
     public event Action<Enemy> onDie;
 
+    private bool isDead = false;
+
     void Start()
     {
         enemy = enemyData.CreateEnemy();
@@ -23,16 +25,22 @@ public class EnemyController : MonoBehaviour
 
     public void GetHit(DamageData damageData)
     {
+        if(isDead)
+            return;
         enemy.currentHP -= damageData.damage;
-        if (enemy.currentHP < 0)
-        {
-            enemy.currentHP = 0;
-            onDie?.Invoke(enemy);
-            SpawnDeadLoot();
-        }
 
         onHit?.Invoke(enemy, damageData);
+
+        if (enemy.currentHP <= 0)
+        {
+            isDead = true;
+            enemy.currentHP = 0;
+            onDie?.Invoke(enemy);
+            EnemyEvents.OnEnemyDied?.Invoke(enemy);
+            SpawnDeadLoot();
+        }
     }
+
 
     private void SpawnDeadLoot()
     {
@@ -60,6 +68,6 @@ public class EnemyController : MonoBehaviour
 
     public bool IsDead()
     {
-        return enemy.currentHP <= 0;
+        return isDead;
     }
 }

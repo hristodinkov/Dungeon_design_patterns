@@ -35,8 +35,8 @@ public class Enemy
     
     public int AttckDamage => attckDamage;  
     private int attckDamage;
+  
 
-    
 
     public Enemy(int pMaxHP, float pSpeed, int pMoney, int pXP, int attckDamage)
     {
