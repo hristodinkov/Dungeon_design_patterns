@@ -17,6 +17,10 @@ public class EnemyController : MonoBehaviour
 
     private bool isDead = false;
 
+    public int CurrentHP => enemy.currentHP;
+    public int MaxHP => enemyData.maxHP;
+
+
     void Start()
     {
         enemy = enemyData.CreateEnemy();
@@ -38,6 +42,7 @@ public class EnemyController : MonoBehaviour
             onDie?.Invoke(enemy);
             EnemyEvents.OnEnemyDied?.Invoke(enemy);
             SpawnDeadLoot();
+            Destroy(gameObject,3f);
         }
     }
 

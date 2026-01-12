@@ -1,15 +1,30 @@
 using System;
 using UnityEngine;
 
-public class Transition 
+[Serializable]
+/// <summary>
+/// Represents a transition between two states in the FSM.
+/// Holds a condition that determines when the transition should occur,
+/// and the state to transition to when the condition is true.
+/// </summary>
+public class Transition
 {
-    // A function delegate that returns true when the transition condition is met.
-    // This is evaluated in Step() by states to check if the FSM should switch states.
+    /// <summary>
+    /// A function delegate that returns true when the transition condition is met.
+    /// This is evaluated in Step() by states to check if the FSM should switch states.
+    /// </summary>
     public Func<bool> condition;
-    // The state to transition to if the condition returns true.
+
+    /// <summary>
+    /// The state to transition to if the condition is true.
+    /// </summary>
     public State nextState;
 
-    // Constructor to create a new transition.
+    /// <summary>
+    /// Constructor to create a new transition.
+    /// </summary>
+    /// <param name="pCondition">The condition function to evaluate.</param>
+    /// <param name="pNextState">The next state to transition to if condition is met.</param>
     public Transition(Func<bool> pCondition, State pNextState)
     {
         condition = pCondition;

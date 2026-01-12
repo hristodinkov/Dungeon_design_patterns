@@ -14,8 +14,6 @@ public class IconViewInventoryPresenter : InventoryPresenter
     // UI text element that displays the name of the current sorting strategy.
     [SerializeField]
     private TextMeshProUGUI sortingStrategyNameText;
-    [SerializeField]
-    private bool belongsToPlayer = true;
 
     [SerializeField] private SetUpInventoryContext contextProvider; 
 

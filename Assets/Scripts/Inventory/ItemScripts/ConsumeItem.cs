@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ConsumeItem : UseItem
 {
-    public event Action<int> onHeal;
 
     public override bool CanUse(Item item, ItemUseContext context)
     {
