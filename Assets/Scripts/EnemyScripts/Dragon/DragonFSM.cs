@@ -1,3 +1,4 @@
+using UnityEngine;
 public class DragonFSM : FSM
 {
     
@@ -25,24 +26,27 @@ public class DragonFSM : FSM
 
         // PHASE 1 FLOW
         movePhase1.transitions.Add(new Transition(movePhase1.TargetReached, align));
-        align.transitions.Add(new Transition(() => align.AlignedWithTarget() && attack.InAttackRange(), attack));
+        align.transitions.Add(new Transition(align.AlignedWithTarget, attack));
         attack.transitions.Add(new Transition(attack.AttackFinished, movePhase1));
+        align.transitions.Add(new Transition(align.TargetOutOfRange, movePhase1));
 
         // PHASE 2 TRIGGER
         movePhase1.transitions.Add(new Transition(IsReadyForPhase2, movePhase2));
 
-
-        // PHASE 2 FLOW
+        //PHASE 2
         attack.transitions.Add(new Transition(attack.AttackFinished, movePhase2));
 
-        // AIR PHASE (Phase 2 special)
-        movePhase2.transitions.Add(new Transition(() => blackboard.enemyController.CurrentHP <= blackboard.enemyController.MaxHP * 0.5f, flyUp));
-
+        // AIR PHASE
+        movePhase2.transitions.Add(new Transition(IsReadyForPhase2, flyUp));
+        // FLY TO ATTACK
         flyUp.transitions.Add(new Transition(flyUp.ReachedAirHeight, airFire));
+        //ATTACK TO EXHAUST
         airFire.transitions.Add(new Transition(airFire.FiredEnoughProjectiles, exhausted));
+        //EXHAUST TO RECOVER
         exhausted.transitions.Add(new Transition(exhausted.RecoveredEnough, recover));
+        //RECOVER TO START THE PHASE2 AGAIN
         recover.transitions.Add(new Transition(recover.FinishedRecover, movePhase2));
-
+        //TRANSITION FLY STATES
         flyUp.transitions.Add(new Transition(flyUp.FlyUpFinished, hover)); 
         hover.transitions.Add(new Transition(hover.HoverFinished, airFire));
 

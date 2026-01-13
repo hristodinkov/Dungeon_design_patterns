@@ -38,6 +38,7 @@ public class MoveState : State
 
         if (blackboard.target != null)
             blackboard.agent.SetDestination(blackboard.target.position);
+
     }
 
     public override void Exit()

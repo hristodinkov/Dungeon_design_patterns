@@ -7270,7 +7270,7 @@ GameObject:
   - component: {fileID: 1239563758}
   - component: {fileID: 1239563757}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: DragonShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7900,8 +7900,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 2.9310489, y: 1.153348, z: 1.341108}
-  m_Center: {x: 0.087748595, y: -0.07667384, z: -0.029778566}
+  m_Size: {x: 4.7018313, y: 1.153348, z: 1.733963}
+  m_Center: {x: 0.25582707, y: -0.07667384, z: 0.16664897}
 --- !u!114 &1356849853
 MonoBehaviour:
   m_ObjectHideFlags: 0

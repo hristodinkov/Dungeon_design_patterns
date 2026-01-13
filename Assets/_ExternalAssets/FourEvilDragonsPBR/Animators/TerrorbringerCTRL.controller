@@ -164,7 +164,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 4
+  m_ExitTime: 0.25
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -243,7 +243,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1bd6660a3bd1c5342942bcb54ed1d65a, type: 3}
+  m_Motion: {fileID: 7400000, guid: cbbe4ed6e6acf294e9df235ff6184874, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -357,12 +357,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Cast
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: Death
     m_Type: 9
     m_DefaultFloat: 0
@@ -375,25 +369,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Idle
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: Aim
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: IsFlying
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: IsGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -941,7 +917,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110200000}
-    m_Position: {x: -1130, y: -320, z: 0}
+    m_Position: {x: -910, y: -350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110257680}
     m_Position: {x: 820, y: -160, z: 0}
@@ -953,7 +929,7 @@ AnimatorStateMachine:
     m_Position: {x: -490, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110211496}
-    m_Position: {x: -60, y: -110, z: 0}
+    m_Position: {x: -140, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110236991}
     m_Position: {x: 400, y: -100, z: 0}
@@ -980,7 +956,7 @@ AnimatorStateMachine:
     m_Position: {x: -960, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110261941}
-    m_Position: {x: 0, y: -260, z: 0}
+    m_Position: {x: 50, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110223364}
     m_Position: {x: 820, y: -80, z: 0}
@@ -1207,7 +1183,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.6875
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
