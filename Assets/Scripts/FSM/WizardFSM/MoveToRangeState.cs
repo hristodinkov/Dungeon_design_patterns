@@ -1,9 +1,9 @@
 ﻿using UnityEngine; 
 public class MoveToRangeState : State
 {
-    private float optimalRange = 5f;   
+    private float optimalRange = 4f;   
     private float minRange = 3f;       
-    private float maxRange =8f;      
+    private float maxRange =5f;      
 
     public MoveToRangeState(Blackboard bb)
     {

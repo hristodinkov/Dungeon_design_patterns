@@ -27,7 +27,6 @@ public class AlignToStateMage : State
         }
             
     }
-
     public override void Step()
     {
         base.Step();
@@ -77,15 +76,6 @@ public class AlignToStateMage : State
 
         return angle < 5f; 
     }
-
-    //public bool TargetOutOfRange()
-    //{
-    //    if (blackboard.target == null)
-    //        return true;
-
-    //    float dist = Vector3.Distance(self.position, blackboard.target.position);
-    //    return dist > blackboard.chaseRange;
-    //}
 
     public bool TargetOutOfRange()
     {

@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\FSM\Blackboard.cs" />
     <Compile Include="Assets\Scripts\Utils\OutlineController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\FSM\SkeletonFSM\SkeletonMoveState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Dragon\DragonExhaustedState.cs" />
     <Compile Include="Assets\Scripts\Utils\ResetManager.cs" />
     <Compile Include="Assets\Scripts\Utils\CamAlign.cs" />

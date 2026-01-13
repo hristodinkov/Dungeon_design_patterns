@@ -5,7 +5,7 @@ public class SkeletonFSM : FSM
         blackboard = bb;
 
         var idle = new IdleState(bb);
-        var move = new MoveState(bb);
+        var move = new SkeletonMoveState(bb);
         var align = new AlignToState(bb.enemyTransform, bb);
         var attack = new AttackState(bb);
         var death = new DeathState(bb);

@@ -4046,6 +4046,8 @@ MonoBehaviour:
   lastAttackTime: 0
   targetPosition: {x: 0, y: 0, z: 0}
   phase2Threshold: 0.5
+  phase2: 0
+  dragonCollider: {fileID: 0}
 --- !u!114 &854492042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5064,7 +5066,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c0e3f6f49b41f014dbbd0061a71bf9ce, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 88fee07c786947547bc0e3a42551a744, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1007521529
 Transform:
@@ -8362,7 +8364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.72
+      value: -8.54
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8863,7 +8865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8978280983361205824, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
       propertyPath: m_Radius
@@ -9044,6 +9046,8 @@ MonoBehaviour:
   lastAttackTime: 0
   targetPosition: {x: 0, y: 0, z: 0}
   phase2Threshold: 0.5
+  phase2: 0
+  dragonCollider: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
