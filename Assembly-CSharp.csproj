@@ -70,6 +70,7 @@
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\HeroObserver.cs" />
     <Compile Include="Assets\_ExternalAssets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\Observer\EnemyDieController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Dragon\MoveStatePhase1.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\Observer\NavmeshController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\Inventory\SortingStrategies\SortingZtoA.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Scripts\Inventory\SetUpInventoryContext.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Skill\SkillData.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\GameSystem\GUI\NumberPresenter.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Base\AimAtPlayer.cs" />
     <Compile Include="Assets\_ExternalAssets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\Scripts\Inventory\Presenters\ItemPresenters\ItemInfoDisplayer.cs" />
     <Compile Include="Assets\Scripts\FSM\SkeletonFSM\AlignToState.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Assets\Scripts\FSM\SkeletonFSM\AttackState.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\Observer\HitVFXController.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Damage\DamageType.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Dragon\MoveStatePhase2.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemyObserver.cs" />
     <Compile Include="Assets\Scripts\Player\XPUI.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Skill\Skill.cs" />
@@ -133,6 +136,7 @@
     <Compile Include="Assets\Scripts\FSM\SkeletonFSM.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Attack\AttackController.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\EnemyDropMoneyPresenter.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Dragon\DragonHoverState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Inventory\SortingStrategies\ItemSortingStrategy.cs" />
     <Compile Include="Assets\_ExternalAssets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />

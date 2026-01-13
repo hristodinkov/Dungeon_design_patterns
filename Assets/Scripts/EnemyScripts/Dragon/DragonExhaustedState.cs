@@ -12,6 +12,7 @@ public class DragonExhaustedState : State
     public override void Enter()
     {
         startTime = Time.time;
+        blackboard.dragonCollider.enabled = true;
         blackboard.animator.SetTrigger("FallExhausted");
     }
 

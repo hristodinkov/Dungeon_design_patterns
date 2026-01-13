@@ -4042,8 +4042,10 @@ MonoBehaviour:
   rotateSpeed: 120
   attackCooldown: 0.8
   projectileSpeed: 10
+  stoppingDistance: 3
   lastAttackTime: 0
   targetPosition: {x: 0, y: 0, z: 0}
+  phase2Threshold: 0.5
 --- !u!114 &854492042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8863,6 +8865,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8978280983361205824, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
+      propertyPath: m_Radius
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2352106285593271537, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
     m_RemovedGameObjects: []
@@ -9034,8 +9040,10 @@ MonoBehaviour:
   rotateSpeed: 120
   attackCooldown: 0.8
   projectileSpeed: 10
+  stoppingDistance: 3
   lastAttackTime: 0
   targetPosition: {x: 0, y: 0, z: 0}
+  phase2Threshold: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

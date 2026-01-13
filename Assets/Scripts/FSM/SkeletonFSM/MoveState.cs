@@ -11,13 +11,21 @@ public class MoveState : State
     {
         base.Enter();
 
+        blackboard.agent.enabled = true;
         blackboard.agent.isStopped = false;
 
+        blackboard.agent.stoppingDistance = blackboard.attackRange * 1.2f;
         if (blackboard.target != null)
             blackboard.agent.SetDestination(blackboard.target.position);
 
         if (blackboard.animator != null)
+        {
+            blackboard.animator.SetBool("Idle", false);
+            blackboard.animator.SetBool("Aim", false);
+            blackboard.animator.SetBool("Attack", false);
             blackboard.animator.SetBool("Chase", true);
+        }
+            
     }
 
     public override void Step()
@@ -34,21 +42,29 @@ public class MoveState : State
 
     public override void Exit()
     {
-        base.Exit();
+        if (blackboard.agent == null || blackboard.target == null) return; 
+      
+        UpdateDestination();
+    }
 
-        blackboard.agent.isStopped = true;
+    private void UpdateDestination()
+    {
+        Vector3 toTarget = blackboard.target.position - blackboard.enemyTransform.position; 
+        float distance = toTarget.magnitude;
+        
+        if (distance < 0.01f) 
+            return; 
 
-        if (blackboard.animator != null)
-            blackboard.animator.SetBool("Chase", false);
+        Vector3 dir = toTarget / distance; 
+        float desiredDistance = blackboard.attackRange - 0.5f; 
+        desiredDistance = Mathf.Max(1f, desiredDistance); 
+        Vector3 dest = blackboard.target.position - dir * desiredDistance; 
+        blackboard.agent.SetDestination(dest); 
     }
 
     public bool TargetReached()
     {
-        if (blackboard.target == null)
-            return false;
-
-        float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
-        return dist <= blackboard.attackRange;
+        return blackboard.agent.remainingDistance <= blackboard.attackRange;
     }
 
     public bool TargetOutOfRange()

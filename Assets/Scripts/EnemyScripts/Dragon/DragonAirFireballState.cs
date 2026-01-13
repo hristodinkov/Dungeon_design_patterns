@@ -15,10 +15,25 @@ public class DragonAirFireballState : State
     {
         shotsFired = 0;
         lastShot = Time.time;
+
+        blackboard.animator.SetBool("Aim", true);
     }
+
 
     public override void Step()
     {
+        if (blackboard.target != null)
+        {
+            Vector3 dir = (blackboard.target.position - blackboard.shootPoint.position).normalized;
+            dir.y = 0; 
+            Quaternion lookRot = Quaternion.LookRotation(dir);
+            blackboard.enemyTransform.rotation = Quaternion.Slerp(
+                blackboard.enemyTransform.rotation,
+                lookRot,
+                Time.deltaTime * 2f
+            );
+        }
+
         if (Time.time > lastShot + cooldown)
         {
             FireProjectile();
@@ -27,20 +42,24 @@ public class DragonAirFireballState : State
         }
     }
 
+
     private void FireProjectile()
     {
+        Vector3 dir = (blackboard.target.position - blackboard.shootPoint.position).normalized;
+
         GameObject proj = GameObject.Instantiate(
             blackboard.projectilePrefab,
             blackboard.shootPoint.position,
-            blackboard.shootPoint.rotation
+            Quaternion.LookRotation(dir)
         );
-        Rigidbody rigidbody = proj.GetComponent<Rigidbody>();
-        rigidbody.linearVelocity =
-            blackboard.shootPoint.forward * blackboard.projectileSpeed;
+
+        Rigidbody rb = proj.GetComponent<Rigidbody>();
+        rb.linearVelocity = dir * blackboard.projectileSpeed;
     }
+
 
     public bool FiredEnoughProjectiles()
     {
-        return shotsFired >= 5;
+        return shotsFired >= 3;
     }
 }

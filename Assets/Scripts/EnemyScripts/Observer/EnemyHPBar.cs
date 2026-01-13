@@ -28,6 +28,7 @@ public class EnemyHPBar : EnemyObserver
     {
         currentHP -= damageData.damage;
         hpBar.fillAmount = currentHP/maxHP;
+        
     }
 
 }

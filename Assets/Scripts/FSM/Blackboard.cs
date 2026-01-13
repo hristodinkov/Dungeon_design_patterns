@@ -27,7 +27,9 @@ public class Blackboard : MonoBehaviour
     public Vector3 targetPosition;
 
     [Header("Dragon Settings")] 
-    public float phase2Threshold = 0.5f; 
+    public float phase2Threshold = 0.5f;
+    public bool phase2;
+    public Collider dragonCollider;
 
     private void Start()
     {

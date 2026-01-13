@@ -1,19 +1,16 @@
 using UnityEngine;
 
-public class DragonFlyUpState : State
+public class DragonHoverState : State
 {
-    private float targetHeight = 10f;
-
-    public DragonFlyUpState(Blackboard bb)
+    public DragonHoverState(Blackboard bb)
     {
         blackboard = bb;
     }
 
     public override void Enter()
     {
-        blackboard.agent.enabled = false;
-        blackboard.animator.SetTrigger("FlyUp");
-        blackboard.dragonCollider.enabled = false;
+        blackboard.animator.ResetTrigger("FlyUp");
+        blackboard.animator.SetTrigger("Hover");
     }
     public override void Step()
     {
@@ -36,18 +33,9 @@ public class DragonFlyUpState : State
         );
     }
 
-
-    public bool ReachedAirHeight()
-    {
-        return blackboard.enemyTransform.position.y >= targetHeight - 0.1f;
-    }
-
-    public bool FlyUpFinished()
+    public bool HoverFinished()
     {
         AnimatorStateInfo info = blackboard.animator.GetCurrentAnimatorStateInfo(0);
-        return info.IsName("Take Off") && info.normalizedTime >= 1f;
+        return info.IsName("Fly Float") && info.normalizedTime >= 1f;
     }
-
-
-
 }

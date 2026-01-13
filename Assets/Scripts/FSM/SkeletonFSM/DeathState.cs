@@ -11,8 +11,6 @@ public class DeathState : State
     {
         base.Enter();
 
-        blackboard.agent.isStopped = true;
-
         if (blackboard.animator != null)
             blackboard.animator.SetTrigger("Death");
     }
