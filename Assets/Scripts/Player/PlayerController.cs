@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerController : MonoBehaviour
@@ -8,13 +11,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider attackCollider;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerData playerData;
-
+    [SerializeField] private Volume hurtEffect;
+    private Vignette vignette;
     public event Action<DamageData,PlayerData> onHit;
     public event Action<int> onHeal;
 
     private void Start()
     {
         playerData.currentHP = playerData.maxHP;
+        hurtEffect.profile.TryGet(out vignette);
     }
     void Update()
     {
@@ -40,11 +45,20 @@ public class PlayerController : MonoBehaviour
     public void GetHit(DamageData damageData)
     {
         playerData.currentHP -= damageData.damage;
+        StartCoroutine(HurtEffect());
         if (playerData.currentHP < 0)
         {
             playerData.currentHP = 0;
         } 
         onHit?.Invoke(damageData,playerData);
+        
+    }
+
+    private IEnumerator HurtEffect() 
+    {
+        vignette.intensity.value = 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        vignette.intensity.value = 0f;
     }
 
 

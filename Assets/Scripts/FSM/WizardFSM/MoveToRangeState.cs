@@ -27,7 +27,6 @@ public class MoveToRangeState : State
 
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
 
-        // 1) TOO FAR → APPROACH
         if (dist > maxRange)
         {
             blackboard.agent.isStopped = false;
@@ -36,7 +35,6 @@ public class MoveToRangeState : State
             return;
         }
 
-        // 2) TOO CLOSE → RETREAT
         if (dist < minRange)
         {
             Vector3 dir = (blackboard.enemyTransform.position - blackboard.target.position).normalized;
@@ -48,7 +46,6 @@ public class MoveToRangeState : State
             return;
         }
 
-        // 3) OPTIMAL RANGE → STOP
         blackboard.agent.isStopped = true;
         
     }
@@ -62,36 +59,19 @@ public class MoveToRangeState : State
         }
     }
 
-    //public bool InShootRange()
-    //{
-    //    float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
-    //    return dist <= maxRange && dist >= minRange;
-    //}
-
     public bool InShootRange()
     {
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
-
-        // малък buffer, за да не подскача
         float innerMin = minRange + 0.5f;
         float innerMax = maxRange - 0.5f;
 
         return dist >= innerMin && dist <= innerMax;
     }
 
-
-
-    //public bool TargetOutOfRange()
-    //{
-    //    float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
-    //    return dist > blackboard.chaseRange;
-    //}
-
     public bool TargetOutOfRange()
     {
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
 
-        // Излизаме от Align само ако сме стабилно извън range
         return dist > maxRange + 0.5f || dist < minRange - 0.5f;
     }
 

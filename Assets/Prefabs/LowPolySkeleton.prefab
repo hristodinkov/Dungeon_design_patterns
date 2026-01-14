@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226195b17a87aaa45a1022dc888cd19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!65 &5034256319105900785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -193,8 +194,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.7784362, y: 0.8081056, z: 0.42463684}
-  m_Center: {x: 0.11078191, y: -0.095947206, z: -0.19857597}
+  m_Size: {x: 1.1060209, y: 0.8081056, z: 0.6380501}
+  m_Center: {x: 0.039876938, y: -0.095947206, z: -0.091869354}
 --- !u!1 &1131224767459197703
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226195b17a87aaa45a1022dc888cd19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!65 &2899433557694505311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1232,11 +1234,11 @@ GameObject:
   - component: {fileID: 4924109618935250832}
   - component: {fileID: 4024740252772709051}
   - component: {fileID: 8978280983361205824}
-  - component: {fileID: 2352106285593271537}
   - component: {fileID: 6699172578993815966}
   - component: {fileID: 121993189882907515}
   - component: {fileID: 8572114217618477319}
   - component: {fileID: 5315181461281307696}
+  - component: {fileID: 8080438633485584533}
   m_Layer: 7
   m_Name: LowPolySkeleton
   m_TagString: Enemy
@@ -1295,7 +1297,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5963712850690503413}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.64
   m_Speed: 3.53
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1308,18 +1310,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2352106285593271537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5963712850690503413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d754f2f192f734caa2131d292b6f4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6699172578993815966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,10 +1388,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae8b5499e2e7241b5942e0e135322c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAIController
-  enemyType: 0
   target: {fileID: 0}
-  animator: {fileID: 4024740252772709051}
+  enemyType: 0
+--- !u!114 &8080438633485584533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963712850690503413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82abfc42720d348419ebd52495d6cb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blackboard
+  enemyTransform: {fileID: 0}
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  animator: {fileID: 0}
   attackCollider: {fileID: 5034256319105900785}
+  enemyController: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  shootPoint: {fileID: 0}
+  chaseRange: 4
+  attackRange: 1.5
+  rotateSpeed: 120
+  attackCooldown: 0.8
+  projectileSpeed: 10
+  stoppingDistance: 3
+  lastAttackTime: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  phase2Threshold: 0.5
+  phase2: 0
+  dragonCollider: {fileID: 0}
 --- !u!1 &5994866430064099628
 GameObject:
   m_ObjectHideFlags: 0

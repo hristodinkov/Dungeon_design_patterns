@@ -2,12 +2,15 @@ using UnityEngine;
 using System;
 using UnityEngine.AI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 { 
     [SerializeField]
     private EnemyData enemyData;
     private Enemy enemy;
+
+    [SerializeField] private Material material;
 
     [SerializeField] private List<GameObject> deadLootPrefabs;
 
@@ -32,7 +35,7 @@ public class EnemyController : MonoBehaviour
         if(isDead)
             return;
         enemy.currentHP -= damageData.damage;
-
+        StartCoroutine(VisuallyHurtEnemy());
         onHit?.Invoke(enemy, damageData);
 
         if (enemy.currentHP <= 0)
@@ -46,6 +49,12 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private IEnumerator VisuallyHurtEnemy() 
+    {
+        material.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        material.color = Color.white;
+    }
 
     private void SpawnDeadLoot()
     {

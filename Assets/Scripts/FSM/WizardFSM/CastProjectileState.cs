@@ -23,7 +23,6 @@ public class CastProjectileState : State
         {
             blackboard.animator.SetBool("Idle", false);
             blackboard.animator.SetBool("Chase", false);
-            //blackboard.animator.SetBool("Aim", true);
             blackboard.animator.SetTrigger("Attack");
         } 
     }
