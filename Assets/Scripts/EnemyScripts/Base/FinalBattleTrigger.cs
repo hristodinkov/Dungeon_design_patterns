@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalBattleTrigger : MonoBehaviour
 {
-    public List<GameObject> gameObjectsToActivate;
+    [SerializeField] private List<GameObject> gameObjectsToActivate;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +12,7 @@ public class FinalBattleTrigger : MonoBehaviour
         {
             obj.SetActive(true);
         }
+        
     }
 
 }

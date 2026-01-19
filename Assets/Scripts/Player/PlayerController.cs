@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -12,12 +13,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private Volume hurtEffect;
+    public StarterAssetsInputs starterAssetsInputs;
+    
     private Vignette vignette;
     public event Action<DamageData,PlayerData> onHit;
     public event Action<int> onHeal;
+    public event Action onDie;
 
     private void Start()
     {
+        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+
         playerData.currentHP = playerData.maxHP;
         hurtEffect.profile.TryGet(out vignette);
     }
@@ -49,9 +55,13 @@ public class PlayerController : MonoBehaviour
         if (playerData.currentHP < 0)
         {
             playerData.currentHP = 0;
-        } 
-        onHit?.Invoke(damageData,playerData);
-        
+            onHit?.Invoke(damageData, playerData);
+            onDie?.Invoke();
+        }
+        else
+        {
+            onHit?.Invoke(damageData, playerData);
+        }
     }
 
     private IEnumerator HurtEffect() 

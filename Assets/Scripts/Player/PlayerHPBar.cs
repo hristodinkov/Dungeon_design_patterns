@@ -19,7 +19,6 @@ public class PlayerHPBar : PlayerObserver
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
 
-
     private void Start()
     {
         maxHP = playerData.maxHP;
@@ -36,6 +35,7 @@ public class PlayerHPBar : PlayerObserver
         //hpBarImage.fillAmount = currentHP / maxHP;
         hpBarSlider.value = currentHP / maxHP;
         hpText.text = $"{currentHP} / {maxHP}";
+       
     }
     public void Heal(int healAmount)
     {
@@ -68,5 +68,8 @@ public class PlayerHPBar : PlayerObserver
         currentHP = playerData.currentHP;
     }
 
-
+    protected override void OnDie()
+    {
+        //No implementation needed for HP bar on player death
+    }
 }

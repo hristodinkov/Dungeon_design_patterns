@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\EnemyScripts\Dragon\DragonAirFireballState.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDeathChecker.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemScripts\EquipItem.cs" />
     <Compile Include="Assets\Scripts\FSM\WizardFSM\AlignToStateMage.cs" />
     <Compile Include="Assets\Scripts\Inventory\SortingStrategies\OldestToNewestSortingStrategy.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Assets\Scripts\EnemyScripts\Dragon\DragonMeleeAttackState.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
     <Compile Include="Assets\Scripts\FSM\WizardFSM\CastProjectileState.cs" />
+    <Compile Include="Assets\Scripts\Utils\SceneManager.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\TextController.cs" />
     <Compile Include="Assets\Scripts\Utils\MouseEventsCallBack.cs" />
