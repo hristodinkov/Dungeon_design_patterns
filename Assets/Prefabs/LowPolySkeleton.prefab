@@ -1323,6 +1323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: a0cbb5ba82d47c04f8d363f6363d7ba7, type: 2}
+  mesh: {fileID: 8123851928707329353}
+  material: {fileID: 2100000, guid: bbed247f65548b541a47512545b9e62c, type: 2}
   deadLootPrefabs:
   - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
   - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}

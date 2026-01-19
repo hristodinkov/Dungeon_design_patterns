@@ -1,8 +1,9 @@
-using UnityEngine;
 using System;
-using UnityEngine.AI;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 { 
@@ -10,6 +11,8 @@ public class EnemyController : MonoBehaviour
     private EnemyData enemyData;
     private Enemy enemy;
 
+
+    [SerializeField] private SkinnedMeshRenderer mesh;
     [SerializeField] private Material material;
 
     [SerializeField] private List<GameObject> deadLootPrefabs;
@@ -23,7 +26,13 @@ public class EnemyController : MonoBehaviour
     public int CurrentHP => enemy.currentHP;
     public int MaxHP => enemyData.maxHP;
 
+    public EnemySpawner enemySpawner;
 
+    private void Awake()
+    {
+        Material newMaterial = new Material(mesh.material);
+        mesh.material = newMaterial;
+    }
     void Start()
     {
         enemy = enemyData.CreateEnemy();
@@ -42,7 +51,12 @@ public class EnemyController : MonoBehaviour
         {
             isDead = true;
             enemy.currentHP = 0;
-            onDie?.Invoke(enemy);
+            if(enemySpawner != null)
+            {
+                enemySpawner.NotifyEnemyDied();
+            }
+            
+            EnemyEventBus.EnemyDied(enemy);
             EnemyEvents.OnEnemyDied?.Invoke(enemy);
             SpawnDeadLoot();
             Destroy(gameObject,3f);
@@ -51,9 +65,9 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator VisuallyHurtEnemy() 
     {
-        material.color = Color.red;
+        mesh.material.color = Color.red;
         yield return new WaitForSeconds(0.5f);
-        material.color = Color.white;
+        mesh.material.color = Color.white;
     }
 
     private void SpawnDeadLoot()

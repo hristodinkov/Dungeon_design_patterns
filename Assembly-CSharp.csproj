@@ -69,6 +69,7 @@
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Utils\EnemyCatcher.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\HeroObserver.cs" />
     <Compile Include="Assets\_ExternalAssets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemySpawner.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\Observer\EnemyDieController.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Dragon\MoveStatePhase1.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\Observer\NavmeshController.cs" />
@@ -101,9 +102,11 @@
     <Compile Include="Assets\Scripts\FSM\MageFSM.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemyAIController.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Base\EnemyEventBus.cs" />
     <Compile Include="Assets\Scripts\FSM\EnemyFSM.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\GameSystem\MoneyController.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Skill\SkillController.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Base\FinalBattleTrigger.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\Skill\SkillVFXController.cs" />
     <Compile Include="Assets\Scripts\SwordAttack.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\Hero\HeroModel.cs" />
@@ -152,6 +155,7 @@
     <Compile Include="Assets\Scripts\FSM\SkeletonFSM\IdleState.cs" />
     <Compile Include="Assets\Scripts\FSM\FSM.cs" />
     <Compile Include="Assets\Scripts\Inventory\Presenters\ItemPresenters\IconViewItemPresenter.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestManager.cs" />
     <Compile Include="Assets\Scripts\FSM\SkeletonFSM\MoveState.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemScripts\UseItemCreator.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\EventBus\GameEventSubscriber.cs" />
