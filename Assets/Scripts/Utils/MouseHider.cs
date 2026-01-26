@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 
 public class MouseHider : MonoBehaviour
 {
-    [SerializeField] private GameObject inventory;
-    [SerializeField] private IconViewInventoryPresenter inventoryPresenter;
+    [SerializeField] protected GameObject inventory;
+    [SerializeField] protected IconViewInventoryPresenter inventoryPresenter;
     
     
-    void Update()
+    protected void Update()
     {
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {

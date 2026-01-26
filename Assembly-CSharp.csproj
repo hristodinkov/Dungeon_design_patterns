@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerObserver.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\GameSystem\IntValue.cs" />
     <Compile Include="Assets\_ExternalAssets\HeroDefense_Bootcamp\Scripts\EventBus\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\Utils\InventoryOpener.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Base\MageProjectileMover.cs" />
     <Compile Include="Assets\Scripts\Player\XPManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />

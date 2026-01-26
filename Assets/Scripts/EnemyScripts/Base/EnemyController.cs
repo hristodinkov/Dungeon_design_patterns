@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
 
     public event Action<Enemy> onEnemyCreated;
     public event Action<Enemy, DamageData> onHit;
-    public event Action<Enemy> onDie;
 
     private bool isDead = false;
 

@@ -94,7 +94,7 @@ public class IconViewInventoryPresenter : InventoryPresenter
     {
         foreach (Transform transform in listParent.GetComponentsInChildren<Transform>())
         {
-            if (transform != listParent)
+            if (transform != listParent&&transform.gameObject!=null)
                 Destroy(transform.gameObject);
         }
     }

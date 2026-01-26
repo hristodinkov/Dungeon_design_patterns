@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +6,17 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] protected Collider spawnArea;
-    [SerializeField] private List<GameObject> enemyPrefabs;
+    [SerializeField] protected List<GameObject> objectsToSpawn;
     private bool tooManyEnemies = false;
     [SerializeField]private int enemyCount = 0;
-    
+
+    [HideInInspector]
+    protected List<GameObject> spawnedEnemies;
 
     void Start()
     {
         spawnArea = GetComponent<Collider>();
+        spawnedEnemies = new List<GameObject>();
         StartCoroutine(SpawnRoutine());
     }
 
@@ -36,9 +39,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    protected void SpawnEnemy() 
+    public void SpawnEnemy() 
     {
-        GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+        GameObject enemyToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Count)];
         Bounds spawnBounds = spawnArea.bounds;
         Vector3 spawnPosition = new Vector3(
             Random.Range(spawnBounds.min.x, spawnBounds.max.x),
@@ -48,6 +51,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyObj = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
         enemyObj.GetComponent<EnemyController>().enemySpawner = this;
         enemyCount++;
+        spawnedEnemies.Add(enemyObj);
     }
     public void NotifyEnemyDied()
     {
