@@ -11,6 +11,12 @@ public class EnemyAIController : MonoBehaviour
 
     private void Start()
     {
+        FSMSetUp();
+        fsm.Enter();
+    }
+
+    private void FSMSetUp()
+    {
         blackboard = GetComponent<Blackboard>();
         target = FindAnyObjectByType<PlayerController>().transform;
 
@@ -35,15 +41,10 @@ public class EnemyAIController : MonoBehaviour
                 fsm = new DragonFSM(blackboard);
                 break;
         }
-
-
-        fsm.Enter();
     }
 
     private void Update()
     {
-        float speed = blackboard.agent.velocity.magnitude;
-
         fsm.Step();
     }
 }

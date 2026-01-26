@@ -1,6 +1,8 @@
+using StarterAssets;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.InputSystem;
 
 namespace InventorySystem
 {
@@ -27,6 +29,13 @@ namespace InventorySystem
 
         // Event triggered when the inventory changes.
         public static Action OnInventoryChanged;
+
+        
+
+        //[SerializeField] private GameObject inventoryUI;
+        //[SerializeField] private Key toggleKey = Key.I;
+        //[SerializeField] private InventoryPresenter inventoryPresenter;
+        //[SerializeField] private StarterAssetsInputs starterAssetsInputs;
 
         private void Awake()
         {
@@ -70,7 +79,17 @@ namespace InventorySystem
             OnInventoryChanged?.Invoke();
         }
 
-   
+        private void Update()
+        {
+            //if (Keyboard.current[Key.I].wasPressedThisFrame)
+            //{
+            //    inventoryPresenter.gameObject.SetActive(!inventoryUI.activeSelf);
+            //    inventoryUI.SetActive(!inventoryUI.activeSelf);
+            //    starterAssetsInputs.cursorLocked = !inventoryUI.activeSelf;
+            //}
+        }
+
+
         #region Sorting Strategies
         private void LoadItemSortingStrategies()
         {

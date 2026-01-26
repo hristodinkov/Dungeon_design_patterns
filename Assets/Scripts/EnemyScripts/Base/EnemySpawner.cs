@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Collider spawnArea;
+    [SerializeField] protected Collider spawnArea;
     [SerializeField] private List<GameObject> enemyPrefabs;
     private bool tooManyEnemies = false;
     [SerializeField]private int enemyCount = 0;
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy() 
+    protected void SpawnEnemy() 
     {
         GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
         Bounds spawnBounds = spawnArea.bounds;

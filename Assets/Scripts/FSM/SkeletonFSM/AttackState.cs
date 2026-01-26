@@ -21,14 +21,13 @@ public class AttackState : State
         colliderActivated = false;
 
        
-        if (blackboard.attackCollider != null)
+        if (blackboard != null)
             blackboard.attackCollider.enabled = false;
 
  
         if (blackboard.animator != null)
             blackboard.animator.SetBool("Attack", true);
 
-        blackboard.lastAttackTime = Time.time;
     }
 
     public override void Step()

@@ -14,6 +14,7 @@ public class PlayerDeathChecker : PlayerObserver
             obj.SetActive(true);
         }
         playerController.starterAssetsInputs.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
 
     }

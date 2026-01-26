@@ -2,11 +2,14 @@ public class UseItemCreator
 {
     public static UseItem Create(Item item)
     {
-        return item.UseType switch
-        {
-            ItemUseType.Consume => new ConsumeItem(),
-            ItemUseType.Equip => new EquipItem(),
-            _ => null,
-        };
+        switch (item.UseType) 
+        { 
+            case ItemUseType.Consume:
+                return new ConsumeItem();
+            case ItemUseType.Equip:
+                return new EquipItem();
+            default:
+                return null;
+        }
     }
 }

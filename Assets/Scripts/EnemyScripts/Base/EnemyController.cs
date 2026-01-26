@@ -57,7 +57,6 @@ public class EnemyController : MonoBehaviour
             }
             
             EnemyEventBus.EnemyDied(enemy);
-            EnemyEvents.OnEnemyDied?.Invoke(enemy);
             SpawnDeadLoot();
             Destroy(gameObject,3f);
         }

@@ -1423,9 +1423,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Core.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj" />
     <ProjectReference Include="Unity.StarterAssets.csproj" />
     <ProjectReference Include="Unity.StarterAssets.Editor.csproj" />
     <ProjectReference Include="URPWizard.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Test.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

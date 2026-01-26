@@ -6,11 +6,19 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject currentWeaponModel;
     public Transform weaponHolder;
     [SerializeField] private Transform lastWeapon;
-    public void SetWeaponDamage(DamageData data) 
+
+
+    public void SetUpSword(DamageData data, GameObject prefab)
+    {
+        SetWeaponDamage(data);
+        SetWeaponModel(prefab);
+    }
+
+    private void SetWeaponDamage(DamageData data) 
     { 
         CurrentDamage = data;
     }
-    public void SetWeaponModel(GameObject prefab)
+    private void SetWeaponModel(GameObject prefab)
     {
         if (currentWeaponModel != null)
             Destroy(currentWeaponModel);

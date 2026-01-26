@@ -14,12 +14,12 @@ public class XPManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyEvents.OnEnemyDied += OnEnemyDied;
+        EnemyEventBus.OnEnemyDied += OnEnemyDied;
     }
 
     private void OnDisable()
     {
-        EnemyEvents.OnEnemyDied -= OnEnemyDied;
+        EnemyEventBus.OnEnemyDied -= OnEnemyDied;
     }
 
     private void Start()

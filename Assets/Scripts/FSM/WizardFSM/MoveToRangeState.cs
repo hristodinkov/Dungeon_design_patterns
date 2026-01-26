@@ -1,10 +1,6 @@
 ﻿using UnityEngine; 
 public class MoveToRangeState : State
 {
-    private float optimalRange = 4f;   
-    private float minRange = 3f;       
-    private float maxRange =5f;      
-
     public MoveToRangeState(Blackboard bb)
     {
         blackboard = bb;
@@ -27,7 +23,7 @@ public class MoveToRangeState : State
 
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
 
-        if (dist > maxRange)
+        if (dist > blackboard.maxRange)
         {
             blackboard.agent.isStopped = false;
             blackboard.agent.SetDestination(blackboard.target.position);
@@ -35,7 +31,7 @@ public class MoveToRangeState : State
             return;
         }
 
-        if (dist < minRange)
+        if (dist < blackboard.minRange)
         {
             Vector3 dir = (blackboard.enemyTransform.position - blackboard.target.position).normalized;
             Vector3 retreatPos = blackboard.enemyTransform.position + dir * 3f;
@@ -62,8 +58,8 @@ public class MoveToRangeState : State
     public bool InShootRange()
     {
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
-        float innerMin = minRange + 0.5f;
-        float innerMax = maxRange - 0.5f;
+        float innerMin = blackboard.minRange + 0.5f;
+        float innerMax = blackboard.maxRange - 0.5f;
 
         return dist >= innerMin && dist <= innerMax;
     }
@@ -72,7 +68,7 @@ public class MoveToRangeState : State
     {
         float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
 
-        return dist > maxRange + 0.5f || dist < minRange - 0.5f;
+        return dist > blackboard.maxRange + 0.5f || dist < blackboard.minRange - 0.5f;
     }
 
 }

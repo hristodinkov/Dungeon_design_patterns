@@ -812,6 +812,7 @@ MonoBehaviour:
   deadLootPrefabs:
   - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
   - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
+  enemySpawner: {fileID: 0}
 --- !u!114 &3832826921667536818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82abfc42720d348419ebd52495d6cb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackboard
+  enemyType: 1
   enemyTransform: {fileID: 0}
   target: {fileID: 0}
   agent: {fileID: 0}
@@ -851,9 +853,9 @@ MonoBehaviour:
   rotateSpeed: 120
   attackCooldown: 0.8
   projectileSpeed: 10
-  stoppingDistance: 3
-  lastAttackTime: 0
-  targetPosition: {x: 0, y: 0, z: 0}
+  optimalRange: 5
+  minRange: 3
+  maxRange: 7
   phase2Threshold: 0.5
   phase2: 0
   dragonCollider: {fileID: 0}

@@ -40,6 +40,15 @@ public class IdleState : State
                <= blackboard.chaseRange;
     }
 
+    public bool InShootRange()
+    {
+        float dist = Vector3.Distance(blackboard.enemyTransform.position, blackboard.target.position);
+        float innerMin = blackboard.minRange + 0.5f;
+        float innerMax = blackboard.maxRange - 0.5f;
+
+        return dist >= innerMin && dist <= innerMax;
+    }
+
     public bool IdleTimeOver(float idleTime)
     {
         return Time.time > startTime + idleTime;

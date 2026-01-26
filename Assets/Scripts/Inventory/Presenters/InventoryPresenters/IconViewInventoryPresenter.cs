@@ -34,7 +34,6 @@ public class IconViewInventoryPresenter : InventoryPresenter
     {
         ClearList();
         Item[] items = inventory.Items;
-        //print("da");
         Dictionary<Item, int> dict = new Dictionary<Item, int>();
 
         foreach (var item in items)

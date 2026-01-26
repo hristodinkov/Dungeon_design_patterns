@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public int maxHP;
-    public float speed;
-    public int money;
     public int xp;
     public int attckDamage;
     public int level;
@@ -16,8 +14,6 @@ public class PlayerData : ScriptableObject
     public int initialXP = 0; 
     public int initialMaxHP = 100; 
     public int initialCurrentHP = 100;
-    public float initialSpeed = 5f;
-    public int initialMoney = 0;
     public int initialAttackDamage = 5;
     public void ResetToInitial() 
     { 
@@ -25,8 +21,6 @@ public class PlayerData : ScriptableObject
         xp = initialXP; 
         maxHP = initialMaxHP; 
         currentHP = initialCurrentHP; 
-        speed = initialSpeed;
-        money = initialMoney;
         attckDamage = initialAttackDamage;
     }
 

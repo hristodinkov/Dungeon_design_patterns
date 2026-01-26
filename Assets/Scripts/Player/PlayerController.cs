@@ -25,13 +25,17 @@ public class PlayerController : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
 
         playerData.currentHP = playerData.maxHP;
-        hurtEffect.profile.TryGet(out vignette);
+
+        if (hurtEffect != null)
+        {
+            hurtEffect.profile.TryGet(out vignette);
+        }
     }
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            StartCoroutine(EnableAttackCollider());
+            StartCoroutine(Attack());
         }
     }
 
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
         onHeal?.Invoke(amount); 
     }
 
-    private System.Collections.IEnumerator EnableAttackCollider()
+    private System.Collections.IEnumerator Attack()
     {
         attackCollider.enabled = true;
         animator.SetTrigger("Attack");
@@ -51,8 +55,12 @@ public class PlayerController : MonoBehaviour
     public void GetHit(DamageData damageData)
     {
         playerData.currentHP -= damageData.damage;
-        StartCoroutine(HurtEffect());
-        if (playerData.currentHP < 0)
+        if(vignette is not null)
+        {
+            StartCoroutine(HurtEffect());
+        }
+        
+        if (playerData.currentHP < 1)
         {
             playerData.currentHP = 0;
             onHit?.Invoke(damageData, playerData);

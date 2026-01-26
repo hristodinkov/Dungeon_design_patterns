@@ -20,10 +20,7 @@ public class AlignToState : State
         {
             UpdateDirection(blackboard.target.position);
         }
-        else
-        {
-            UpdateDirection(blackboard.targetPosition);
-        }
+       
     }
 
     public override void Step()

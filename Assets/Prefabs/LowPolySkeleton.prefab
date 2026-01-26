@@ -1328,6 +1328,7 @@ MonoBehaviour:
   deadLootPrefabs:
   - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
   - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
+  enemySpawner: {fileID: 0}
 --- !u!136 &121993189882907515
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1404,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82abfc42720d348419ebd52495d6cb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackboard
+  enemyType: 0
   enemyTransform: {fileID: 0}
   target: {fileID: 0}
   agent: {fileID: 0}
@@ -1412,14 +1414,14 @@ MonoBehaviour:
   enemyController: {fileID: 0}
   projectilePrefab: {fileID: 0}
   shootPoint: {fileID: 0}
-  chaseRange: 4
+  chaseRange: 6
   attackRange: 1.5
   rotateSpeed: 120
   attackCooldown: 0.8
   projectileSpeed: 10
-  stoppingDistance: 3
-  lastAttackTime: 0
-  targetPosition: {x: 0, y: 0, z: 0}
+  optimalRange: 4
+  minRange: 3
+  maxRange: 5
   phase2Threshold: 0.5
   phase2: 0
   dragonCollider: {fileID: 0}

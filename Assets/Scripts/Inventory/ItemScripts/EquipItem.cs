@@ -13,7 +13,6 @@ public class EquipItem : UseItem
 
     public override void Execute(Item item, ItemUseContext context)
     {
-        context.PlayerCombat.SetWeaponDamage(item.DamageData);
-        context.PlayerCombat.SetWeaponModel(item.itemModel);
+        context.PlayerCombat.SetUpSword(item.DamageData, item.itemModel);
     }
 }

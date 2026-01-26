@@ -20,7 +20,10 @@ public class MoveState : State
 
         if (blackboard.animator != null)
         {
-            blackboard.animator.SetBool("Idle", false);
+            if (blackboard.enemyType != EnemyType.Dragon)
+            {
+                blackboard.animator.SetBool("Idle", false);
+            }
             blackboard.animator.SetBool("Aim", false);
             blackboard.animator.SetBool("Attack", false);
             blackboard.animator.SetBool("Chase", true);

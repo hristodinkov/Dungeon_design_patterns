@@ -4,7 +4,7 @@ public class CastProjectileState : State
 {
     private float startTime;
     private bool projectileFired = false;
-    private float castDelay = 0.5f; 
+    private float castDelay = 0.7f; 
 
     public CastProjectileState(Blackboard bb)
     {
