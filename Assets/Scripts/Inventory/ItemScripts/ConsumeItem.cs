@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ConsumeItem : UseItem
 {
-
     public override bool CanUse(Item item, ItemUseContext context)
     {
         return item.UseType==ItemUseType.Consume && item.HealAmount > 0;

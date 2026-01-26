@@ -1,9 +1,12 @@
 
+using InventorySystem;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyTestSpawner : EnemySpawner
 {
+    public List<ItemData> swords;
+    public Inventory inventory;
     private void Start()
     {
         spawnedEnemies = new List<GameObject>();
@@ -33,5 +36,10 @@ public class EnemyTestSpawner : EnemySpawner
         );
         GameObject item = Instantiate(itemToSpawn, spawnPosition, Quaternion.identity);
         
+    }
+
+    public void AddRandomSword()
+    {
+        inventory.AddItem(new Item(swords[Random.Range(0,swords.Count)]));
     }
 }

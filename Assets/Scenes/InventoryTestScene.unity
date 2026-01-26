@@ -277,8 +277,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1387903238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2496,6 +2496,11 @@ MonoBehaviour:
   - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
   - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
   enemyCount: 0
+  swords:
+  - {fileID: 11400000, guid: a5d8738154357a24eb9f07aa87cbd40d, type: 2}
+  - {fileID: 11400000, guid: 183b811caa48514409da3179c4da3e3d, type: 2}
+  - {fileID: 11400000, guid: 352079d8adf8a6d4482a271af370f01f, type: 2}
+  inventory: {fileID: 1016787592}
 --- !u!1 &751498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,6 +3571,8 @@ MonoBehaviour:
   spawnArea: {fileID: 0}
   objectsToSpawn: []
   enemyCount: 0
+  swords: []
+  inventory: {fileID: 0}
 --- !u!65 &887180583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3619,7 +3626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &900442193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4253,7 +4260,7 @@ RectTransform:
   m_Father: {fileID: 737188241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 4.2650757, y: 0}
   m_SizeDelta: {x: 18.5147, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6013,7 +6020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1580014935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6063,7 +6070,7 @@ GameObject:
   - component: {fileID: 1584338633}
   - component: {fileID: 1584338632}
   m_Layer: 5
-  m_Name: PressK
+  m_Name: PressE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6108,7 +6115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press K to open inventory
+  m_text: 'Press E to open inventory
 
 '
   m_isRightToLeft: 0
@@ -7151,7 +7158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1952664278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 747993685}
+        m_TargetAssemblyTypeName: EnemyTestSpawner, Assembly-CSharp
+        m_MethodName: AddRandomSword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1952664278
 MonoBehaviour:
   m_ObjectHideFlags: 0

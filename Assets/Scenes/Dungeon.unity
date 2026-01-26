@@ -1724,7 +1724,7 @@ GameObject:
   - component: {fileID: 567075304}
   - component: {fileID: 567075303}
   m_Layer: 0
-  m_Name: Spawner (1)
+  m_Name: SpawnerRightRoom
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2369,7 +2369,7 @@ GameObject:
   - component: {fileID: 747993683}
   - component: {fileID: 747993685}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerMainRoom
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5062,7 +5062,7 @@ GameObject:
   - component: {fileID: 1400808795}
   - component: {fileID: 1400808794}
   m_Layer: 0
-  m_Name: Spawner (2)
+  m_Name: SpawnerLeftRoom
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
