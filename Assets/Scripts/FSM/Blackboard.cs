@@ -47,6 +47,7 @@ public class Blackboard : MonoBehaviour
     public bool phase2;
     [ShowIf("IsDragon")]
     public Collider dragonCollider;
+
     protected void Start()
     {
         enemyController = GetComponent<EnemyController>();

@@ -28,9 +28,9 @@ public class XPManager : MonoBehaviour
         currentXP = playerdata.xp;
     }
 
-    private void OnEnemyDied(Enemy enemy)
+    private void OnEnemyDied(EnemyController enemyController)
     {
-        AddXP(enemy.XP);
+        AddXP(enemyController.Enemy.XP);
     }
 
     public void AddXP(int amount)

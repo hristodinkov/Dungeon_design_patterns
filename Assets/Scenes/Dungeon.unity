@@ -249,7 +249,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7203542638352138447, guid: 1760f33a38681c341919502dacd38a7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866457506}
   m_SourcePrefab: {fileID: 100100000, guid: 1760f33a38681c341919502dacd38a7c, type: 3}
 --- !u!1 &95557379
 GameObject:
@@ -1759,9 +1762,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  enemyCount: 0
+  - {fileID: 6699172578993815966, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
+  - {fileID: 1844418512146947207, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!65 &567075304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2425,9 +2429,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  enemyCount: 0
+  - {fileID: 1844418512146947207, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
+  - {fileID: 6699172578993815966, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!1 &751498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,7 +3741,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 946538052081844245, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_PrefabInstance: {fileID: 1969105851}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1564725673}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34193d97c504a7445a23852460065a70, type: 3}
@@ -3752,7 +3757,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4244626405643678211, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_PrefabInstance: {fileID: 1969105851}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1564725673}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e087ecce43ebbff45a1b360637807d93, type: 3}
@@ -4701,6 +4706,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208991297}
   m_CullTransparentMesh: 1
+--- !u!137 &1277705786 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7203542638355338643, guid: 1760f33a38681c341919502dacd38a7c, type: 3}
+  m_PrefabInstance: {fileID: 68706931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315531836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,9 +5107,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
   objectsToSpawn:
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  enemyCount: 0
+  - {fileID: 6699172578993815966, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
+  - {fileID: 1844418512146947207, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!65 &1400808795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5354,6 +5365,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562846346}
   m_CullTransparentMesh: 1
+--- !u!1 &1564725673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+  m_PrefabInstance: {fileID: 1969105851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564725680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564725673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f547502d249a9e46884965732815c2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HurtPlayerPresenter
+  playerController: {fileID: 933997091}
+  hurtEffect: {fileID: 1795578184}
 --- !u!1 &1580014934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,6 +5747,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0252b655d5b5943759ce4d583942bb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+--- !u!114 &1866457506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866457493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d353b52d18094abbf234f89a7b479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HurtEnemyEffect
+  enemyController: {fileID: 0}
+  mesh: {fileID: 1277705786}
+  material: {fileID: 0}
 --- !u!1 &1888759724
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,7 +6458,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564725680}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
 --- !u!1 &2001668968 stripped
 GameObject:

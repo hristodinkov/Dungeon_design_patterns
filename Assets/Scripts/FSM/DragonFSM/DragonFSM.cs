@@ -43,13 +43,13 @@ public class DragonFSM : FSM
 
 
         // DEATH
-        moveState.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        align.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        attack.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        flyUp.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        airFire.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        exhausted.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
-        recover.transitions.Add(new Transition(blackboard.enemyController.IsDead, death));
+        moveState.transitions.Add(new Transition(()=>blackboard.enemyController.IsDead, death));
+        align.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
+        attack.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
+        flyUp.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
+        airFire.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
+        exhausted.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
+        recover.transitions.Add(new Transition(() => blackboard.enemyController.IsDead, death));
         
     }
 

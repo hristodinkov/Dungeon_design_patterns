@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,57 +5,74 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] protected Collider spawnArea;
-    [SerializeField] protected List<GameObject> objectsToSpawn;
-    private bool tooManyEnemies = false;
-    [SerializeField]private int enemyCount = 0;
+    [SerializeField] private List<EnemyController> objectsToSpawn;
 
+    [SerializeField] private bool preWarmSpawn = true;
+    [SerializeField] private bool testSpawner = false;
     [HideInInspector]
-    protected List<GameObject> spawnedEnemies;
+    protected List<EnemyController> spawnedEnemies;
 
     void Start()
     {
         spawnArea = GetComponent<Collider>();
-        spawnedEnemies = new List<GameObject>();
-        StartCoroutine(SpawnRoutine());
+        spawnedEnemies = new List<EnemyController>();
+        if (preWarmSpawn)
+            SpawnRoutine();
+    }
+    private void OnEnable()
+    {
+        EnemyEventBus.OnEnemyDied += CheckForSpawningAnEnemy;
+    }
+    private void OnDisable()
+    {
+        EnemyEventBus.OnEnemyDied -= CheckForSpawningAnEnemy;
     }
 
-    private IEnumerator SpawnRoutine()
+    private void CheckForSpawningAnEnemy(EnemyController enemyController)
     {
-        for (int i = 0; i < 3; i++)
-            SpawnEnemy();
+        if (testSpawner == true)
+            return;
+        StartCoroutine(LateSpawn(enemyController));
+    }
 
-        while (true)
+    private IEnumerator LateSpawn(EnemyController enemyController)
+    {
+        yield return new WaitForSeconds(4f);
+        if (spawnedEnemies.Contains(enemyController))
         {
-            if (enemyCount < 7)
-            {
-                SpawnEnemy();
-                yield return new WaitForSeconds(10f);
-            }
-            else
-            {
-                yield return null;
-            }
+            spawnedEnemies.Remove(enemyController);
+            SpawnEnemy();
         }
     }
 
+    private void SpawnRoutine()
+    {
+        for (int i = 0; i < 5; i++)
+            SpawnEnemy();
+    }
+    public void DespawnAllEnemies()
+    {
+        foreach (EnemyController enemy in spawnedEnemies)
+        {
+            if (enemy != null)
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
+        spawnedEnemies.Clear();
+    }
     public void SpawnEnemy() 
     {
-        GameObject enemyToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Count)];
+        GameObject enemyToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Count)].gameObject;
         Bounds spawnBounds = spawnArea.bounds;
         Vector3 spawnPosition = new Vector3(
             Random.Range(spawnBounds.min.x, spawnBounds.max.x),
             spawnBounds.min.y,
             Random.Range(spawnBounds.min.z, spawnBounds.max.z)
         );
-        GameObject enemyObj = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
-        enemyObj.GetComponent<EnemyController>().enemySpawner = this;
-        enemyCount++;
+        EnemyController enemyObj = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity).GetComponent<EnemyController>();
+
         spawnedEnemies.Add(enemyObj);
     }
-    public void NotifyEnemyDied()
-    {
-        enemyCount--;
-    }
-
 
 }

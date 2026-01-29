@@ -74,7 +74,6 @@ public class IconViewInventoryPresenter : InventoryPresenter
         {
             ItemPresenter itemPresenter = Instantiate(itemPresenterPrefab);
             itemPresenter.transform.SetParent(listParent);
-            itemPresenter.transform.SetParent(listParent);
             itemPresenter.transform.localScale = Vector3.one;
             TextMeshProUGUI textQuantity = itemPresenter.GetComponentInChildren<TextMeshProUGUI>();
 
@@ -92,10 +91,18 @@ public class IconViewInventoryPresenter : InventoryPresenter
 
     private void ClearList()
     {
-        foreach (Transform transform in listParent.GetComponentsInChildren<Transform>())
+        List<Transform> children = new List<Transform>();
+
+        foreach (Transform child in listParent)
         {
-            if (transform != listParent&&transform.gameObject!=null)
-                Destroy(transform.gameObject);
+            if (child != listParent)
+                children.Add(child);
+        }
+
+        foreach (Transform child in children)
+        {
+            Destroy(child.gameObject);
         }
     }
+
 }

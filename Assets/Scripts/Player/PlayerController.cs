@@ -12,10 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider attackCollider;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerData playerData;
-    [SerializeField] private Volume hurtEffect;
+
     public StarterAssetsInputs starterAssetsInputs;
-    
-    private Vignette vignette;
+
     public event Action<DamageData,PlayerData> onHit;
     public event Action<int> onHeal;
     public event Action onDie;
@@ -25,11 +24,6 @@ public class PlayerController : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
 
         playerData.currentHP = playerData.maxHP;
-
-        if (hurtEffect != null)
-        {
-            hurtEffect.profile.TryGet(out vignette);
-        }
     }
     void Update()
     {
@@ -55,10 +49,7 @@ public class PlayerController : MonoBehaviour
     public void GetHit(DamageData damageData)
     {
         playerData.currentHP -= damageData.damage;
-        if(vignette is not null)
-        {
-            StartCoroutine(HurtEffect());
-        }
+        
         
         if (playerData.currentHP < 1)
         {
@@ -72,12 +63,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator HurtEffect() 
-    {
-        vignette.intensity.value = 0.5f;
-        yield return new WaitForSeconds(0.5f);
-        vignette.intensity.value = 0f;
-    }
+    
 
 
 }

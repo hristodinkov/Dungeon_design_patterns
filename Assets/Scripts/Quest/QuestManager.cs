@@ -34,7 +34,7 @@ public class QuestManager : MonoBehaviour
     { 
         EnemyEventBus.OnEnemyDied -= HandleEnemyDied; 
     }
-    private void HandleEnemyDied(Enemy enemy) 
+    private void HandleEnemyDied(EnemyController enemyController) 
     { 
         killedEnemies++; 
         UpdateText(); 

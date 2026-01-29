@@ -9,9 +9,6 @@ public class DragonMeleeAttackState : State
     private float startTime;
     private bool colliderActive = false;
 
-    private float attackRange => blackboard.attackRange;
-    private int damage = 20;
-
     public DragonMeleeAttackState(Blackboard bb)
     {
         blackboard = bb;

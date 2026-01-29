@@ -21,10 +21,10 @@ public class SkeletonFSM : FSM
         move.transitions.Add(new Transition(move.TargetOutOfRange, idle));
         
 
-        idle.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        move.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        align.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        attack.transitions.Add(new Transition(bb.enemyController.IsDead, death));
+        idle.transitions.Add(new Transition(()=>bb.enemyController.IsDead, death));
+        move.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
+        align.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
+        attack.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
     }
 }
 

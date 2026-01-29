@@ -674,6 +674,7 @@ GameObject:
   - component: {fileID: 4951476480394988348}
   - component: {fileID: 3832826921667536818}
   - component: {fileID: 5956621874544320907}
+  - component: {fileID: 3167847375648354555}
   m_Layer: 7
   m_Name: PolyArtWizardStandardMat
   m_TagString: Enemy
@@ -807,8 +808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   enemyData: {fileID: 11400000, guid: 4822e8ed5f9751a4ab7ee4df835ebce1, type: 2}
-  mesh: {fileID: 137784740806856926}
-  material: {fileID: 2100000, guid: c33a548d6df8c8a4daca736f3300dd9c, type: 2}
   deadLootPrefabs:
   - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
   - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
@@ -859,6 +858,21 @@ MonoBehaviour:
   phase2Threshold: 0.5
   phase2: 0
   dragonCollider: {fileID: 0}
+--- !u!114 &3167847375648354555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248815240492774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d353b52d18094abbf234f89a7b479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HurtEnemyEffect
+  enemyController: {fileID: 4951476480394988348}
+  mesh: {fileID: 137784740806856926}
+  material: {fileID: 0}
 --- !u!1 &1251583507443948
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,64 +11,42 @@ public class EnemyController : MonoBehaviour
     private EnemyData enemyData;
     private Enemy enemy;
 
-
-    [SerializeField] private SkinnedMeshRenderer mesh;
-    [SerializeField] private Material material;
-
     [SerializeField] private List<GameObject> deadLootPrefabs;
 
     public event Action<Enemy> onEnemyCreated;
     public event Action<Enemy, DamageData> onHit;
 
-    private bool isDead = false;
-
+    public Enemy Enemy => enemy;
+    public EnemyData EnemyData => enemyData;
     public int CurrentHP => enemy.currentHP;
     public int MaxHP => enemyData.maxHP;
+    public bool IsDead => CurrentHP <= 0;
 
     public EnemySpawner enemySpawner;
 
-    private void Awake()
-    {
-        Material newMaterial = new Material(mesh.material);
-        mesh.material = newMaterial;
-    }
     void Start()
     {
         enemy = enemyData.CreateEnemy();
         onEnemyCreated?.Invoke(enemy);
     }
 
-    public void GetHit(DamageData damageData)
+    public void ApplyHit(DamageData damageData)
     {
-        if(isDead)
-            return;
+        if ( IsDead ) return;
+
         enemy.currentHP -= damageData.damage;
-        StartCoroutine(VisuallyHurtEnemy());
         onHit?.Invoke(enemy, damageData);
 
         if (enemy.currentHP <= 0)
         {
-            isDead = true;
             enemy.currentHP = 0;
-            if(enemySpawner != null)
-            {
-                enemySpawner.NotifyEnemyDied();
-            }
             
-            EnemyEventBus.EnemyDied(enemy);
-            SpawnDeadLoot();
+            EnemyEventBus.EnemyDied(this);
+            SpawnLootAfterDead();
             Destroy(gameObject,3f);
         }
     }
-
-    private IEnumerator VisuallyHurtEnemy() 
-    {
-        mesh.material.color = Color.red;
-        yield return new WaitForSeconds(0.5f);
-        mesh.material.color = Color.white;
-    }
-
-    private void SpawnDeadLoot()
+    private void SpawnLootAfterDead()
     {
         int r = UnityEngine.Random.Range(0, deadLootPrefabs.Count);
         GameObject deadLoot =
@@ -79,21 +57,8 @@ public class EnemyController : MonoBehaviour
             );
     }
 
-    public void GetHitButton()
+    private void OnDestroy()
     {
-        DamageData damageData= new DamageData(5);
-        enemy.currentHP -= damageData.damage;
-        if (enemy.currentHP < 0)
-        {
-            enemy.currentHP = 0;
-
-        }
-
-        onHit?.Invoke(enemy, damageData);
-    }
-
-    public bool IsDead()
-    {
-        return isDead;
+        
     }
 }

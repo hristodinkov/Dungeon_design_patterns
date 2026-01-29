@@ -1758,10 +1758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
-  enemyPrefabs:
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  enemyCount: 0
+  objectsToSpawn: []
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!65 &567075304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2424,10 +2423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
-  enemyPrefabs:
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  enemyCount: 0
+  objectsToSpawn: []
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!1 &751498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,9 +3496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
   spawnArea: {fileID: 0}
-  enemyPrefabs:
-  - {fileID: 7203542638352138447, guid: 1760f33a38681c341919502dacd38a7c, type: 3}
-  enemyCount: 0
+  inventory: {fileID: 0}
+  swords: []
+  objectsToSpawn: []
 --- !u!65 &887180583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5375,10 +5373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnArea: {fileID: 0}
-  enemyPrefabs:
-  - {fileID: 5963712850690503413, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
-  - {fileID: 6713726339125731677, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
-  enemyCount: 0
+  objectsToSpawn: []
+  preWarmSpawn: 1
+  testSpawner: 0
 --- !u!65 &1400808795
 BoxCollider:
   m_ObjectHideFlags: 0

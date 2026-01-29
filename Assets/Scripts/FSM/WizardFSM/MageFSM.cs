@@ -23,10 +23,10 @@
 
         cast.transitions.Add(new Transition(cast.CastFinished, align));
 
-        idle.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        move.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        align.transitions.Add(new Transition(bb.enemyController.IsDead, death));
-        cast.transitions.Add(new Transition(bb.enemyController.IsDead, death));
+        idle.transitions.Add(new Transition(()=>bb.enemyController.IsDead, death));
+        move.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
+        align.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
+        cast.transitions.Add(new Transition(() => bb.enemyController.IsDead, death));
     
     }
 }

@@ -12,7 +12,7 @@ public class FinalBattleTrigger : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        
+        gameObject.SetActive(false);
     }
 
 }

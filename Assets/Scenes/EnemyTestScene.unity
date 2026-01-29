@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 747993685}
-        m_TargetAssemblyTypeName: EnemyTestSpawner, Assembly-CSharp
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: SpawnEnemy
         m_Mode: 1
         m_Arguments:
@@ -1781,14 +1781,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 567075301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fb8f1e79653a547bbd1ff1c18d7969, type: 3}
+  m_Script: {fileID: 11500000, guid: eafa652735606e04486ffad0c11fb76a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
-  spawnArea: {fileID: 0}
-  objectsToSpawn: []
-  enemyCount: 0
-  swords: []
-  inventory: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  spawnArea: {fileID: 567075304}
+  objectsToSpawn:
+  - {fileID: 6699172578993815966, guid: 79a97939accd5fb4491fb6b5f4eb0b47, type: 3}
+  preWarmSpawn: 0
+  testSpawner: 1
 --- !u!1 &619037248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2184,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567075305}
-        m_TargetAssemblyTypeName: EnemyTestSpawner, Assembly-CSharp
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: SpawnEnemy
         m_Mode: 1
         m_Arguments:
@@ -2559,14 +2559,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 747993681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18fb8f1e79653a547bbd1ff1c18d7969, type: 3}
+  m_Script: {fileID: 11500000, guid: eafa652735606e04486ffad0c11fb76a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
-  spawnArea: {fileID: 0}
-  objectsToSpawn: []
-  enemyCount: 0
-  swords: []
-  inventory: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  spawnArea: {fileID: 747993683}
+  objectsToSpawn:
+  - {fileID: 1844418512146947207, guid: 35d024f7dfbc2844ca7480cff822a338, type: 3}
+  preWarmSpawn: 0
+  testSpawner: 1
 --- !u!1 &751498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,10 +3636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
   spawnArea: {fileID: 0}
-  objectsToSpawn: []
-  enemyCount: 0
-  swords: []
   inventory: {fileID: 0}
+  swords: []
+  objectsToSpawn: []
 --- !u!65 &887180583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7227,7 +7226,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 747993685}
-        m_TargetAssemblyTypeName: EnemyTestSpawner, Assembly-CSharp
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: DespawnAllEnemies
         m_Mode: 1
         m_Arguments:
@@ -7239,7 +7238,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 567075305}
-        m_TargetAssemblyTypeName: EnemyTestSpawner, Assembly-CSharp
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: DespawnAllEnemies
         m_Mode: 1
         m_Arguments:

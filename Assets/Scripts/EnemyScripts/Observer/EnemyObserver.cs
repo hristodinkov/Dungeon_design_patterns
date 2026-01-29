@@ -8,9 +8,7 @@ public abstract class EnemyObserver : MonoBehaviour
     {
         enemyController.onEnemyCreated += OnEnemyCreated;
         enemyController.onHit += OnEnemyHit;
-
     }
-
     protected void OnDisable()
     {
         enemyController.onEnemyCreated -= OnEnemyCreated;

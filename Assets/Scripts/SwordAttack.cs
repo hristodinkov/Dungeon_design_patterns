@@ -13,11 +13,11 @@ public class SwordAttack : MonoBehaviour
             {
                 if(playerCombat.CurrentDamage != null)
                 {
-                    enemyController.GetHit(playerCombat.CurrentDamage);
+                    enemyController.ApplyHit(playerCombat.CurrentDamage);
                 }
                 else
                 {
-                    enemyController.GetHit(new DamageData(5));
+                    enemyController.ApplyHit(new DamageData(5));
                 }
             }
         }

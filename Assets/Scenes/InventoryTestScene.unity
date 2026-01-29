@@ -2492,15 +2492,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
   spawnArea: {fileID: 0}
-  objectsToSpawn:
-  - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
-  - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
-  enemyCount: 0
+  inventory: {fileID: 1016787592}
   swords:
   - {fileID: 11400000, guid: a5d8738154357a24eb9f07aa87cbd40d, type: 2}
   - {fileID: 11400000, guid: 183b811caa48514409da3179c4da3e3d, type: 2}
   - {fileID: 11400000, guid: 352079d8adf8a6d4482a271af370f01f, type: 2}
-  inventory: {fileID: 1016787592}
+  objectsToSpawn:
+  - {fileID: 4897634760751286550, guid: 176bfad17141f1a4abacb0992a787e45, type: 3}
+  - {fileID: 7374719493776645551, guid: 16916fc6de2ea2446bf8884fd10a7016, type: 3}
 --- !u!1 &751498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,10 +3568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTestSpawner
   spawnArea: {fileID: 0}
-  objectsToSpawn: []
-  enemyCount: 0
-  swords: []
   inventory: {fileID: 0}
+  swords: []
+  objectsToSpawn: []
 --- !u!65 &887180583
 BoxCollider:
   m_ObjectHideFlags: 0
