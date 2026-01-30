@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 95292f08c7af587409f4c8e26f826581
+  - enabled: 1
+    path: Assets/Scenes/DragonTestScene.unity
+    guid: 766601f186fbc344686d1fc43c06833d
+  - enabled: 1
+    path: Assets/Scenes/EnemyTestScene.unity
+    guid: 9faba7e31dbf43a43b4ed1f2307087c0
+  - enabled: 1
+    path: Assets/Scenes/InventoryTestScene.unity
+    guid: a9cda8b3531abd7498b73188b870fb51
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

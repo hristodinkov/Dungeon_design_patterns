@@ -7,9 +7,9 @@ public class SceneManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void RestartGame()
+    public void RestartGame(string sceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
     }
 }

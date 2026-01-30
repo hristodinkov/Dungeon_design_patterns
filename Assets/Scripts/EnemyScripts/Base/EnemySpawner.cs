@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] protected Collider spawnArea;
-    [SerializeField] private List<EnemyController> objectsToSpawn;
+    [SerializeField] private List<EnemyController> enemyPrefabs;
 
     [SerializeField] private bool preWarmSpawn = true;
     [SerializeField] private bool testSpawner = false;
     [HideInInspector]
-    protected List<EnemyController> spawnedEnemies;
+    private List<EnemyController> spawnedEnemies;
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SpawnEnemy() 
     {
-        GameObject enemyToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Count)].gameObject;
+        GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)].gameObject;
         Bounds spawnBounds = spawnArea.bounds;
         Vector3 spawnPosition = new Vector3(
             Random.Range(spawnBounds.min.x, spawnBounds.max.x),
