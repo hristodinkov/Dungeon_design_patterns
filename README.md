@@ -3,7 +3,7 @@
 This project is a modular, event‑driven gameplay framework built in Unity, designed to demonstrate clean architecture and scalable AI behavior. It uses a fully extensible ***Finite State Machine (FSM)*** system combined with a shared ***Blackboard*** to drive intelligent enemy behavior, enabling Skeletons, Mages, and Dragons to react dynamically and transition through complex, multi‑phase combat patterns. Core gameplay systems communicate through a global ***EventBus***, allowing XP, quests, loot, UI, and spawners to respond to events without direct dependencies. All gameplay data like enemies, items, and damage types is defined through ***ScriptableObjects***, while UI and visual feedback rely on the ***Observer pattern*** to react automatically to player and enemy events. The inventory system uses ***Factory*** pattern for item usage.
 
 ## Preview
-**Long gif**
+<img src="dungeon.png" width="600" height="600">
 
 ## Design patterns breakdown
 
